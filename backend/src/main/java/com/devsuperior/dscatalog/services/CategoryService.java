@@ -31,6 +31,11 @@ public class CategoryService {
 		Category entity = obj.orElseThrow(() -> new ResourceNotFoundException("Categoria não encontrada"));
 		return new CategoryDTO(entity);
 	}
+
+	public CategoryDTO insert(CategoryDTO dto) {
+		
+		return null;
+	}
 	
 	
 	
