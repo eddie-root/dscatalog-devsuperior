@@ -1,6 +1,7 @@
 package com.devsuperior.dscatalog.entities;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -26,11 +27,11 @@ public class Product implements Serializable {
 	private String name;
 	@Column(columnDefinition = "TEXT")
 	private String description;
-	private String price;
+	private Double price;
 	private String imgUrl;
 	
 	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
-	private String date;
+	private Instant date;
 	
 	@ManyToMany
 	@JoinTable(name = "tb_product_category",
@@ -40,8 +41,8 @@ public class Product implements Serializable {
 
 	public Product() {
 	}
-
-	public Product(Long id, String name, String description, String price, String imgUrl, String date) {
+	
+	public Product(Long id, String name, String description, Double price, String imgUrl, Instant date) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -49,6 +50,7 @@ public class Product implements Serializable {
 		this.imgUrl = imgUrl;
 		this.date = date;
 	}
+
 
 	public Long getId() {
 		return id;
@@ -74,11 +76,11 @@ public class Product implements Serializable {
 		this.description = description;
 	}
 
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
@@ -90,11 +92,11 @@ public class Product implements Serializable {
 		this.imgUrl = imgUrl;
 	}
 
-	public String getDate() {
+	public Instant getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Instant date) {
 		this.date = date;
 	}
 

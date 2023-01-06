@@ -1,6 +1,7 @@
 package com.devsuperior.dscatalog.dto;
 
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -14,17 +15,17 @@ public class ProductDTO implements Serializable {
 	private Long id;
 	private String name;
 	private String description;
-	private String price;
+	private Double price;
 	private String imgUrl;
 	
-	private String date;
+	private Instant date;
 	
 	private List<CategoryDTO> categories = new ArrayList<>();
 
 	public ProductDTO() {
 	}
 
-	public ProductDTO(Long id, String name, String description, String price, String imgUrl, String date) {
+	public ProductDTO(Long id, String name, String description, Double price, String imgUrl, Instant date) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
@@ -72,11 +73,11 @@ public class ProductDTO implements Serializable {
 		this.description = description;
 	}
 
-	public String getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 
@@ -88,11 +89,11 @@ public class ProductDTO implements Serializable {
 		this.imgUrl = imgUrl;
 	}
 
-	public String getDate() {
+	public Instant getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Instant date) {
 		this.date = date;
 	}
 
