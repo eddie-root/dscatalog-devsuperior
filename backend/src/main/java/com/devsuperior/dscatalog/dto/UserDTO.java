@@ -12,8 +12,9 @@ import com.devsuperior.dscatalog.entities.User;
 public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@NotBlank(message = "Campo obrigatorio")
 	private Long id;
+
+	@NotBlank(message = "Campo obrigatorio")
 	private String firstName;
 	private String lastName;
 	
